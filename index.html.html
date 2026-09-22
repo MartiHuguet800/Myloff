@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Per a tu ❤️</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Georgia, serif;
+      background: #fff5f7;
+      color: #4a2732;
+      overflow-x: hidden;
+    }
+
+    /* COR D'ANIMACIÓ */
+    .heart {
+      position: fixed;
+      bottom: -30px;
+      font-size: 20px;
+      animation: pujar 6s linear forwards;
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    @keyframes pujar {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* PORTADA */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 30px;
+      background:
+        linear-gradient(rgba(255, 220, 230, 0.72), rgba(255, 245, 247, 0.9)),
+        url("imatges/portada.jpg") center/cover;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      animation: aparicio 1.5s ease;
+    }
+
+    @keyframes aparicio {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero h1 {
+      font-size: clamp(45px, 9vw, 90px);
+      color: #b83b61;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 22px;
+      margin-bottom: 35px;
+    }
+
+    .botó {
+      display: inline-block;
+      padding: 14px 28px;
+      background: #c94f72;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      transition: 0.3s;
+    }
+
+    .botó:hover {
+      transform: scale(1.05);
+      background: #a93658;
+    }
+
+    /* SECCIONS */
+    section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .titol {
+      text-align: center;
+      color: #b83b61;
+      font-size: 38px;
+      margin-bottom: 45px;
+    }
+
+    /* CARTA */
+    .carta {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(100, 30, 50, 0.1);
+      line-height: 1.9;
+      font-size: 19px;
+    }
+
+    .carta p {
+      margin-bottom: 20px;
+    }
+
+    /* GALERIA */
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .foto {
+      background: white;
+      padding: 10px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(100, 30, 50, 0.12);
+      transition: 0.3s;
+    }
+
+    .foto:hover {
+      transform: translateY(-7px) rotate(1deg);
+    }
+
+    .foto img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 10px;
+      display: block;
+    }
+
+    .foto p {
+      text-align: center;
+      padding: 12px 5px 5px;
+      font-style: italic;
+    }
+
+    /* RECORDS */
+    .records {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .record {
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(100, 30, 50, 0.1);
+    }
+
+    .record .emoji {
+      font-size: 45px;
+      margin-bottom: 15px;
+    }
+
+    .record h3 {
+      color: #b83b61;
+      margin-bottom: 10px;
+    }
+
+    /* MÚSICA */
+    .musica {
+      text-align: center;
+      background: #ffe1e9;
+      border-radius: 25px;
+      padding: 45px 20px;
+    }
+
+    .musica h2 {
+      color: #b83b61;
+      margin-bottom: 15px;
+    }
+
+    .music-player {
+      margin-top: 25px;
+    }
+
+    audio {
+      width: min(500px, 100%);
+    }
+
+    /* FINAL */
+    .final {
+      text-align: center;
+      padding-bottom: 100px;
+    }
+
+    .final h2 {
+      font-size: 45px;
+      color: #b83b61;
+      margin-bottom: 15px;
+    }
+
+    .final p {
+      font-size: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #f7d4de;
+    }
+
+    @media (max-width: 600px) {
+      .carta {
+        padding: 25px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      section {
+        padding: 60px 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- PORTADA -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Per a tu ❤️</h1>
+
+      <!-- CANVIA AQUEST TEXT -->
+      <p>
+        Amb carinyo el teu informatic fav 🤓
+      </p>
+
+      <a href="#carta" class="botó">Obre la carta </a>
+    </div>
+  </header>
+
+
+  <!-- CARTA -->
+  <section id="carta">
+    <h2 class="titol">Una carta per a tu </h2>
+
+    <div class="carta">
+
+      <!-- ESCRIU AQUÍ EL TEU MISSATGE -->
+      <p>
+        Amooooor,
+      </p>
+
+      <p>
+        Vull demostrar que els informatics tambe podem fer coses mones i xules, i de paso practicar una mica pa les practiques jaja,
+      </p>
+
+      <p>
+        nah ara enserio, me importes moltissim amor i vull que sapiguis que ets la millor novia i persona d'aquest mon i que te mereixes lo millor.
+      </p>
+
+      <p>
+        I tot i que ara no estem fisicament junts jo sempre estare alli per intentar treuret un somriure, he mencionat algun cop que m'encanta el teu somriure? jsjs
+      </p>
+
+      <p>
+        PD: Se que hi ha mil faltes de ortografia, soc informatic, no la RAE, no mu tinguis en conta porfa.
+      </p>
+
+      <p style="text-align: right;">
+        — Martin MCfly
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- FOTOS -->
+  <section>
+    <h2 class="titol">El nostre mon</h2>
+
+    <div class="galeria">
+
+      <div class="foto">
+        <img src="imatges/foto1.jpg" alt="El nostre record">
+        <p>bachateta</p>
+      </div>
+
+      <div class="foto">
+        <img src="imatges/foto2.jpeg" alt="El nostre record">
+        <p>billar</p>
+      </div>
+
+      <div class="foto">
+        <img src="imatges/foto3.jpg" alt="El nostre record">
+        <p>Vaya dos tontos</p>
+      </div>
+
+      <div class="foto">
+        <img src="imatges/foto4.jpg" alt="El nostre record">
+        <p>TELEPATIAAA</p>
+      </div>
+
+      <div class="foto">
+        <img src="imatges/foto5.jpg" alt="El nostre record">
+        <p>Bon top ( ͡° ͜ʖ ͡°)</p>
+      </div>
+
+      <div class="foto">
+        <img src="imatges/foto6.jpg" alt="El nostre record">
+        <p>RIP Balu</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MÚSICA -->
+  <section>
+    <div class="musica">
+
+      <h2>La nostra cançó</h2>
+
+      <p>
+        dale al play
+      </p>
+
+      <div class="music-player">
+        <!-- POSA LA TEVA CANÇÓ A LA CARPETA musica -->
+        <audio controls>
+          <source src="musica/canco.mp3.mp3" type="audio/mpeg">
+          El teu navegador no suporta àudio.
+        </audio>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- FINAL -->
+  <section class="final">
+
+    <h2>T'estimooo</h2>
+
+    <p>
+      tu i jo forever and ever
+    </p>
+
+  </section>
+
+
+  <footer>
+    Fet amb amor per a tu
+  </footer>
+
+
+  <!-- CORSETS ANIMATS -->
+  <script>
+    function crearCor() {
+      const cor = document.createElement("div");
+
+      cor.classList.add("heart");
+      cor.innerHTML = "❤️";
+
+      cor.style.left = Math.random() * 100 + "vw";
+      cor.style.fontSize = (15 + Math.random() * 25) + "px";
+      cor.style.animationDuration = (4 + Math.random() * 4) + "s";
+
+      document.body.appendChild(cor);
+
+      setTimeout(() => {
+        cor.remove();
+      }, 8000);
+    }
+
+    setInterval(crearCor, 800);
+  </script>
+
+</body>
+</html>
